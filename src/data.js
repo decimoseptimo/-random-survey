@@ -1,10 +1,10 @@
-const data = cb => {
+const data = (onSuccess, onFailure) => {
   const url = "https://opentdb.com/api.php?amount=5&type=boolean"
   fetch(url)
     .then(response => response.json())
-    .then(data => cb(data))
+    .then(data => onSuccess(data))
     .catch(error => {
-      console.error(error)
+      onFailure(error)
     })
 }
 
