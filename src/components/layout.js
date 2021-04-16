@@ -8,6 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Center } from "@chakra-ui/layout"
 
 import Header from "./header"
 import "./layout.css"
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
+        <Center>
         <footer
           style={{
             marginTop: `2rem`,
@@ -42,7 +44,7 @@ const Layout = ({ children }) => {
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        </footer></Center>
       </div>
     </>
   )
