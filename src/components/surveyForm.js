@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { useForm } from "react-hook-form"
 import { Alert, AlertIcon, Button } from "@chakra-ui/react"
 
@@ -13,7 +13,7 @@ const SurveyForm = ({ results }) => {
   } = useForm()
   const onSubmit = data => {
     console.log(data)
-    navigate('/survey-completed')
+    navigate("/survey-completed")
   }
 
   const formFields = results.length ? (
@@ -37,7 +37,7 @@ const SurveyForm = ({ results }) => {
       {formFields}
       <div style={{ textAlign: "center" }}>
         <Button type="submit" colorScheme="teal" size="lg" width="20rem">
-          <Link to="/take-survey">Submit</Link>
+          Submit
         </Button>
       </div>
     </form>
