@@ -1,4 +1,4 @@
-const data = (onSuccess, onFailure) => {
+export const getData = (onSuccess, onFailure) => {
   const url = "https://opentdb.com/api.php?amount=5&type=boolean"
   fetch(url)
     .then(response => response.json())
@@ -8,4 +8,19 @@ const data = (onSuccess, onFailure) => {
     })
 }
 
-export default data
+export const postData = (data, onSuccess, onFailure) => {
+  const url = "/api/surveys"
+  fetch(url, {
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify(data),
+  })
+    .then(response => response.json())
+    .then(data => onSuccess(data))
+    .catch(error => {
+      onFailure(error)
+    })
+}

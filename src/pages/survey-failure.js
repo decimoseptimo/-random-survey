@@ -1,20 +1,20 @@
-import * as React from "react"
+import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { VStack } from "@chakra-ui/layout"
 import { Heading } from "@chakra-ui/react"
 
-const IndexPage = () => (
+const SuccessPage = () => (
   <Layout>
     <SEO title="Home" />
     <VStack spacing={5}>
-      <p>Thanks for taking the time to complete the survey</p>
+      <p>There was an error while processing the survey</p>
       <Heading as="h1" size="4xl" isTruncated>
-        Have a nice day!
+        Failure!
       </Heading>
     </VStack>
   </Layout>
 )
 
-export default IndexPage
+export default SuccessPage

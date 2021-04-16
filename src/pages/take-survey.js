@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react"
 import { VStack } from "@chakra-ui/layout"
 import { Spinner } from "@chakra-ui/react"
 
-import _data from "../data"
+import { getData } from "../data"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SurveyForm from "../components/SurveyForm"
 
-const IndexPage = () => {
+const SurveyPage = () => {
   const [data, setData] = useState()
   const [isLoading, setIsLoading] = useState(true)
 
@@ -23,9 +23,14 @@ const IndexPage = () => {
   }
 
   const results = data?.results ?? []
-
+  console.log(results)
+  
   useEffect(() => {
-    _data(onSuccess, onFailure)
+    getData(onSuccess, onFailure)
+
+    // fetch("/api/users")
+    //   .then(response => response.json())
+    //   .then(json => console.log(json))
   }, [])
 
   return (
@@ -45,4 +50,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default SurveyPage
