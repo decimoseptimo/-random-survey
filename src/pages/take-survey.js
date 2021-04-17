@@ -5,7 +5,7 @@ import { Spinner } from "@chakra-ui/react"
 import { getData } from "../data"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import SurveyForm from "../components/SurveyForm"
+import SurveyForm from "../components/surveyForm"
 
 const SurveyPage = () => {
   const [data, setData] = useState()
@@ -22,9 +22,9 @@ const SurveyPage = () => {
     console.error(e)
   }
 
-  const results = data?.results ?? []
-  console.log(results)
-  
+  const surveyQuestions = data?.results ?? []
+  // console.log(surveyQuestions)
+
   useEffect(() => {
     getData(onSuccess, onFailure)
 
@@ -43,7 +43,7 @@ const SurveyPage = () => {
             Please hold on <Spinner color="teal" as="span" /> loading survey
           </p>
         ) : (
-          <SurveyForm results={results} />
+          <SurveyForm surveyQuestions={surveyQuestions} />
         )}
       </VStack>
     </Layout>

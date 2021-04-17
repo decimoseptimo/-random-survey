@@ -6,7 +6,7 @@ import { Alert, AlertIcon, Button } from "@chakra-ui/react"
 import FormField from "../components/formField"
 import { postData } from "../data"
 
-const SurveyForm = ({ results }) => {
+const SurveyForm = ({ surveyQuestions }) => {
   const {
     register,
     handleSubmit,
@@ -14,8 +14,8 @@ const SurveyForm = ({ results }) => {
   } = useForm()
 
   const onSubmit = data => {
-    // reconciliate questions & answers
-    const surveyResults = results.map((i, ix) => ({
+    // reconciliate survey questions & user form answers
+    const surveyResults = surveyQuestions.map((i, ix) => ({
       order: ix,
       question: i.question,
       answer: data[ix],
@@ -32,8 +32,8 @@ const SurveyForm = ({ results }) => {
     navigate("/survey-failure")
   }
 
-  const formFields = results.length ? (
-    results.map((i, ix) => (
+  const formFields = surveyQuestions.length ? (
+    surveyQuestions.map((i, ix) => (
       <FormField
         key={ix}
         id={ix}

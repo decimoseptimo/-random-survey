@@ -1,6 +1,9 @@
 import { createServer } from "miragejs"
 
-// Watch out odd error, see: https://github.com/miragejs/miragejs/issues/651
+/**
+ * Raises a fake server that intercepts fetch requests to test our API endpoints
+ */
+// watch out odd error, see: https://github.com/miragejs/miragejs/issues/651
 export const Server = () => {
   createServer({
     routes() {

@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { Button } from "@chakra-ui/button"
+import { VStack } from "@chakra-ui/layout"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Button } from "@chakra-ui/button"
-import { VStack } from "@chakra-ui/layout"
 
 const IndexPage = () => (
   <Layout>

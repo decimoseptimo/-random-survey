@@ -1,9 +1,9 @@
 import React from "react"
+import { VStack } from "@chakra-ui/layout"
+import { Heading } from "@chakra-ui/react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { VStack } from "@chakra-ui/layout"
-import { Heading } from "@chakra-ui/react"
 
 const FailurePage = () => (
   <Layout>
